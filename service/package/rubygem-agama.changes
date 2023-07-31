@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Mon Jul 31 13:28:08 UTC 2023 - Ancor Gonzalez Sosa <ancor@suse.com>
+
+- Fixed ALP Dolomite pattern names (from gh#openSUSE/agama#674)
+
+-------------------------------------------------------------------
 Wed Jul 26 10:00:39 UTC 2023 - José Iván López González <jlopez@suse.com>
 
 - Adapt config file to install ALP Dolomite instead of ALP Micro
