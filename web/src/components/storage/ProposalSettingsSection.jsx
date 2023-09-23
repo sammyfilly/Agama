@@ -181,7 +181,7 @@ file systems will be created on the selected device.");
 const LVMField = ({ selected: selectedProp, isLoading, onChange }) => {
   const [selected, setSelected] = useState(selectedProp);
 
-  const changeSelected = (value) => {
+  const onUseLVMChange = (_, value) => {
     setSelected(value);
     onChange(value);
   };
@@ -194,7 +194,7 @@ const LVMField = ({ selected: selectedProp, isLoading, onChange }) => {
       label={_("Use logical volume management (LVM)")}
       isReversed
       isChecked={selected}
-      onChange={changeSelected}
+      onChange={onUseLVMChange}
     />
   );
 };
@@ -222,7 +222,7 @@ const EncryptionPasswordForm = ({ id, password: passwordProp, onSubmit, onValida
     if (password.length === 0) onValidate(false);
   }, [password, onValidate]);
 
-  const changePassword = (v) => setPassword(v);
+  const changePassword = (_, v) => setPassword(v);
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -277,7 +277,7 @@ const EncryptionPasswordField = ({ selected: selectedProp, password: passwordPro
 
   const validateForm = (valid) => setIsFormValid(valid);
 
-  const changeSelected = (value) => {
+  const onUseEncryptionChange = (_, value) => {
     setSelected(value);
 
     if (value && password.length === 0) openForm();
@@ -313,7 +313,7 @@ const EncryptionPasswordField = ({ selected: selectedProp, password: passwordPro
           label={_("Use encryption")}
           isReversed
           isChecked={selected}
-          onChange={changeSelected}
+          onChange={onUseEncryptionChange}
         />
         { selected && <ChangePasswordButton /> }
       </div>

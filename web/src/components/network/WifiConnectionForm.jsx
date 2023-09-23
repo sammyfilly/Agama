@@ -30,9 +30,9 @@ import {
   FormSelectOption,
   TextInput
 } from "@patternfly/react-core";
+import { PasswordInput } from "~/components/core";
 import { useInstallerClient } from "~/context/installer";
 import { _ } from "~/i18n";
-import { PasswordInput } from "~/components/core";
 
 /*
 * FIXME: it should be moved to the SecurityProtocols enum that already exists or to a class based
@@ -101,7 +101,7 @@ export default function WifiConnectionForm({ network, onCancel, onSubmitCallback
             label={_("SSID")}
             aria-label="ssid"
             value={ssid}
-            onChange={setSsid}
+            onChange={(_, value) => setSsid(value)}
           />
         </FormGroup> }
 
@@ -111,7 +111,7 @@ export default function WifiConnectionForm({ network, onCancel, onSubmitCallback
           id="security"
           aria-label={_("Security")}
           value={security}
-          onChange={setSecurity}
+          onChange={(_, value) => setSecurity(value)}
         >
           {selectorOptions}
         </FormSelect>

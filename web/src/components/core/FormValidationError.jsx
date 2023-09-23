@@ -1,5 +1,5 @@
 /*
- * Copyright (c) [2022] SUSE LLC
+ * Copyright (c) [2023] SUSE LLC
  *
  * All Rights Reserved.
  *
@@ -20,25 +20,24 @@
  */
 
 import React from "react";
-import { EmptyState, EmptyStateIcon, EmptyStateHeader } from "@patternfly/react-core";
+import { FormHelperText, HelperText, HelperTextItem } from "@patternfly/react-core";
 
-import { Center, Icon } from "~/components/layout";
-import { _ } from "~/i18n";
+/**
+ * Helper component for displaying error messages in a PF/FormGroup
+ *
+ * @param {object} props - component props
+ * @param {string} [props.message] - text to be shown as error
+ */
+export default function FormValidationError({ message }) {
+  if (!message) return;
 
-const LoadingIcon = () => <Icon name="loading" className="icon-big" />;
-
-function Loading({ text = _("Loading installation environment, please wait.") }) {
   return (
-    <Center>
-      <EmptyState variant="xl">
-        <EmptyStateHeader
-          titleText={text}
-          headingLevel="h2"
-          icon={<EmptyStateIcon icon={LoadingIcon} />}
-        />
-      </EmptyState>
-    </Center>
+    <FormHelperText>
+      <HelperText>
+        <HelperTextItem variant="error">
+          { message }
+        </HelperTextItem>
+      </HelperText>
+    </FormHelperText>
   );
 }
-
-export default Loading;
