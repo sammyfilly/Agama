@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0"
+anyhow = "1.0.82"
 agama-locale-data = { path="../agama-locale-data" }
 agama-lib = { path="../agama-lib" }
 log = "0.4"
